@@ -103,3 +103,17 @@ input,select{
 .filter-options div{
   flex: 1 1 0;
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable, #printable * {
+    visibility: visible;
+  }
+  #printable {
+    position: fixed;
+    width: 90vw;
+    top: 0;
+  }
+}

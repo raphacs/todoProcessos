@@ -128,11 +128,11 @@ function App() {
   
 
   return (
-    <div className="app">
+    <div className="app" >
       <h1>Lista de Processos</h1>
       <Search search={search} setSearch={setSearch} />
       <Filter filter={filter} setFilter={setFilter} ordenarCompletas={ordenarCompletas} ordenarIncompletas={ordenarIncompletas} />
-      <div className="todo-list">
+      <div className="todo-list" id="printable">
         {todos
           .filter((todo) => filter === 'All' ? true : filter === 'Completed' ? todo.isCompleted : !todo.isCompleted)
           .filter((todo) => todo.processo.toLowerCase().includes(search) || todo.contribuidor.toLowerCase().includes(search))
@@ -140,7 +140,7 @@ function App() {
             <Todo todo={todo} removeTodo={removeTodo} completeTodo={completeTodo} key={todo.processo} />
           ))}
       </div>
-      <TodoForm addTodo={addTodo} />
+      <TodoForm addTodo={addTodo}  />
     </div>
   )
 }
